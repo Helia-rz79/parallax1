@@ -2,7 +2,7 @@
 
 ![14](https://github.com/user-attachments/assets/2b72a1e2-23e3-4a7d-9f92-769ae84e085c)
 
--🔗 [Demo Project]()
+-🔗 [Demo Project](https://helia-rz79.github.io/parallax1/)
 
 -🙍 Developed by helia rezaie
 

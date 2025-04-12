@@ -8,9 +8,7 @@
 
 -🗓️ Created - 2024-10-1
 
--📱 Technologies Used - Html , css .
-
-- Hooks Used : useState 
+-📱 Technologies Used - Html , css , js .
 
 - Role - Frontend
 

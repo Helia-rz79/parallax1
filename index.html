@@ -39,7 +39,9 @@
         </ul>
     </header>
 
-    <main class="flex h-dvh w-max" id="track">
+    <div id="scroll-space">
+    <div class="sticky top-0 h-dvh touch-pan-y overflow-hidden" id="pin">
+    <main class="flex h-full w-max will-change-transform" id="track">
         <section class="flex h-full w-max shrink-0" id="intro">
             <div class="flex h-full w-screen shrink-0 flex-col justify-center bg-forest px-6 py-24 text-white sm:px-12 lg:w-[34rem] xl:w-[42rem] xl:px-20">
                 <h1 class="font-display text-[clamp(2.7rem,8vw,5rem)] leading-[0.95] font-normal text-sabz">Discover 18th <br>Century rural <br>life in penn.</h1>
@@ -181,9 +183,12 @@
             </div>
         </section>
     </main>
+    </div>
+    </div>
 
     <script>
         const track = document.querySelector('#track')
+        const space = document.querySelector('#scroll-space')
         const menu = document.querySelector('#menu')
         const toggle = document.querySelector('#menu-toggle')
         let max = 0
@@ -202,11 +207,21 @@
         function measure() {
             const basis = max || 1
             const ratio = Math.min(1, window.scrollY / basis)
-            max = Math.max(0, track.scrollWidth - window.innerWidth)
-            document.documentElement.style.height = `${max + window.innerHeight}px`
+            const width = Math.max(track.scrollWidth, [...track.children].reduce((sum, el) => sum + el.offsetWidth, 0))
+            max = Math.max(0, width - window.innerWidth)
+            space.style.height = `${max + window.innerHeight}px`
+            document.documentElement.style.height = ''
             const next = Math.round(ratio * max)
             if (Math.abs(window.scrollY - next) > 1) window.scrollTo(0, next)
             paint()
+        }
+
+        function wheelDelta(event) {
+            let delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY
+            if (event.shiftKey && event.deltaY) delta = event.deltaY
+            if (event.deltaMode === 1) delta *= 16
+            if (event.deltaMode === 2) delta *= window.innerHeight
+            return delta
         }
 
         function setMenu(open) {
@@ -218,8 +233,33 @@
             document.documentElement.classList.toggle('overflow-hidden', open)
         }
 
-        document.documentElement.classList.add('js-hscroll')
         measure()
+
+        window.addEventListener('wheel', (event) => {
+            if (event.ctrlKey) return
+            const horizontal = Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey
+            if (!horizontal) return
+            event.preventDefault()
+            window.scrollBy(0, wheelDelta(event))
+        }, { passive: false })
+
+        let touchX = 0
+        let touchY = 0
+        window.addEventListener('touchstart', (event) => {
+            touchX = event.touches[0].clientX
+            touchY = event.touches[0].clientY
+        }, { passive: true })
+        window.addEventListener('touchmove', (event) => {
+            const x = event.touches[0].clientX
+            const y = event.touches[0].clientY
+            const dx = touchX - x
+            const dy = touchY - y
+            touchX = x
+            touchY = y
+            if (Math.abs(dx) <= Math.abs(dy)) return
+            event.preventDefault()
+            window.scrollBy(0, dx)
+        }, { passive: false })
 
         window.addEventListener('scroll', () => {
             if (frame) return
@@ -239,6 +279,8 @@
 
         window.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') setMenu(false)
+            if (event.key === 'ArrowRight') window.scrollBy(0, 80)
+            if (event.key === 'ArrowLeft') window.scrollBy(0, -80)
         })
 
         document.addEventListener('click', (event) => {

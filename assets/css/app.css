@@ -12,23 +12,6 @@
     --color-sage: #6a7870;
 }
 
-body {
-    overflow-x: auto;
-}
-
-html.js-hscroll,
-html.js-hscroll body {
-    overflow-x: clip;
-}
-
-html.js-hscroll #track {
-    position: fixed;
-    inset: 0 auto 0 0;
-    height: auto;
-    overflow: hidden;
-    will-change: transform;
-}
-
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
     margin: 0;

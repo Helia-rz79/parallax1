@@ -4,196 +4,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Wright’s Ferry Mansion — a historic house museum of 18th-century rural Pennsylvania.">
+    <title>Wright’s Ferry Mansion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/master.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fontello/css/fontello.css">
+    <link rel="stylesheet" href="assets/css/master.css">
 </head>
 
-<body>
-    <header>
-        <a href="">Wright's Ferry Mansion</a>
-        <figure>
-            <img src="assets/img/6579c06091f576361dee40d0_Group 582.svg" alt="">
-        </figure>
-        <div>
-            <span>Menu</span>
-            <button class=" icon-menu" onclick="myMenu()"></button>
+<body class="bg-paper font-sans text-neutral-800 antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 flex h-16 items-center bg-paper/90 px-4 backdrop-blur-md sm:px-8">
+        <a class="relative z-50 text-sm font-medium leading-tight max-md:absolute max-md:left-1/2 max-md:w-24 max-md:-translate-x-1/2 md:max-w-44" href="#intro">
+            <span class="hidden md:inline">Wright’s Ferry Mansion</span>
+            <img class="h-12 w-24 object-contain md:hidden" src="assets/img/6579c06091f576361dee40d0_Group 582.svg" alt="Wright’s Ferry Mansion">
+        </a>
+        <img class="pointer-events-none absolute left-1/2 hidden h-12 w-24 -translate-x-1/2 object-contain md:block" src="assets/img/6579c06091f576361dee40d0_Group 582.svg" alt="">
+        <div class="relative z-50 ml-auto flex items-center gap-3">
+            <span class="hidden text-sm sm:inline">Menu</span>
+            <button class="group inline-flex size-10 items-center justify-center rounded-full border border-black bg-transparent text-xl" id="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+                <span class="icon-menu group-aria-expanded:hidden"></span>
+                <span class="hidden text-3xl leading-none group-aria-expanded:inline" aria-hidden="true">×</span>
+            </button>
         </div>
-        <ul id="menu">
-            <li>01<span class="icon-right"></span><a href=""> home</a></li>
-            <li>02<span class="icon-right"></span><a href="">about</a></li>
-            <li>03<span class="icon-right"></span><a href="">history</a></li>
-            <li>04<span class="icon-right"></span><a href="">collection</a></li>
-            <li>05<span class="icon-right"></span><a href="">virtual tour</a></li>
-            <li>06<span class="icon-right"></span><a href="">plan a visit</a></li>
-            <li>07<span class="icon-right"></span><a href="">book shop</a></li>
-            <li>08<span class="icon-right"></span><a href="">contact us</a></li>
+        <ul class="fixed top-16 right-0 z-40 flex h-[calc(100dvh-4rem)] w-full translate-x-full flex-col justify-center gap-1 overflow-y-auto bg-sage px-8 motion-reduce:transition-none transition-transform duration-700 sm:w-[34rem] sm:px-16" id="menu" inert aria-hidden="true">
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">01</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#intro">home</a></li>
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">02</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#mansion">about</a></li>
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">03</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#history">history</a></li>
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">04</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#collection">collection</a></li>
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">05</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#tour">virtual tour</a></li>
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">06</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#visit">plan a visit</a></li>
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">07</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#collection">book shop</a></li>
+            <li class="group flex items-center"><span class="w-10 text-sm text-white/70">08</span><span class="icon-right mr-2 text-2xl text-sabz opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-3xl font-light uppercase text-white transition-colors group-hover:text-sabz sm:text-4xl" href="#contact">contact us</a></li>
         </ul>
     </header>
-    <main>
-        <section id="first"> 
-            <div class="bag">
-                <h1>Discover 18th <br>Century rural <br>life in penn.</h1>
-                <p>A historic house museum, the 1738 Wright’s Ferry Mansion celebrates important examples of pre-1750
-                    fine art, decorative arts, and architecture, as well as a multi-generational narrative reflective of
-                    Columbia, Pennsylvania, and its surrounding region.</p>
-                <a href="">Learn more<span class="icon-right"></span></a>
+
+    <main class="flex h-dvh w-max" id="track">
+        <section class="flex h-full w-max shrink-0" id="intro">
+            <div class="flex h-full w-screen shrink-0 flex-col justify-center bg-forest px-6 py-24 text-white sm:px-12 lg:w-[34rem] xl:w-[42rem] xl:px-20">
+                <h1 class="font-display text-[clamp(2.7rem,8vw,5rem)] leading-[0.95] font-normal text-sabz">Discover 18th <br>Century rural <br>life in penn.</h1>
+                <p class="mt-6 max-w-lg text-base leading-relaxed text-neutral-300 sm:text-lg">A historic house museum, the 1738 Wright’s Ferry Mansion celebrates important examples of pre-1750 fine art, decorative arts, and architecture, as well as a multi-generational narrative reflective of Columbia, Pennsylvania, and its surrounding region.</p>
+                <a class="group mt-8 inline-flex items-center gap-3 text-lg font-medium text-white" href="#mansion">Learn more<span class="inline-flex size-10 items-center justify-center rounded-full border border-sabz text-sabz transition-colors group-hover:bg-sabz group-hover:text-white"><span class="icon-right text-lg"></span></span></a>
             </div>
-            <figure id="img1">
-                <img src="assets/img/1.jpg" alt="">
+            <figure class="h-full w-screen shrink-0 lg:w-[68vw]">
+                <img class="h-full w-full object-cover" src="assets/img/1.jpg" alt="18th-century bedroom at Wright’s Ferry Mansion" fetchpriority="high">
             </figure>
-            <section class="sabz">
-            <div>
-                <img src="assets/img/2.jpg" alt="">
-                <img src="assets/img/3.jpg" alt="">
+        </section>
+
+        <section class="relative h-full w-screen shrink-0 overflow-hidden bg-sabz lg:w-[46rem]" aria-label="Interior details">
+            <img class="absolute top-[16%] left-[6%] h-[50%] w-[68%] object-cover shadow-xl lg:top-[18%] lg:left-[8%] lg:h-[62%] lg:w-[72%]" src="assets/img/4.jpg" alt="Parlor with a green wing chair and paneled fireplace">
+            <div class="absolute top-[12%] right-3 flex w-[34%] flex-col gap-2 lg:top-[14%] lg:right-8 lg:w-64 lg:gap-0">
+                <img class="h-28 w-full object-cover sm:h-40 lg:h-52" src="assets/img/2.jpg" alt="Mansion interior">
+                <img class="h-28 w-full object-cover sm:h-40 lg:h-52" src="assets/img/3.jpg" alt="Detail of the mansion interior">
             </div>
-            <img src="assets/img/4.jpg" alt="">
-            </section>
-            <section id="sec">
-                <img src="assets/img/5.png" alt="">
-                <img src="assets/img/6.png" alt="">
-               <section class="one row">
-                <figure>
-                    <img src="assets/img/7.jpg" alt="">
-                </figure>
-                <div>
-                    <span>the mansion</span>
-                    <h2>Timeless <br>Susquehanna</h2>
-                    <p>Wright’s Ferry Mansion has been restored by the Louise Steinman von Hess Foundation with great care to accurately represent the period of 1700-1750, when its builder, Susanna Wright — known as “the blue stocking of the Susquehanna”, engaged in intellectual discourse with some of the most inventive and influential minds of 18th century Philadelphia and beyond.</p>
-                    <a href="">About the mansion<span class="icon-right"></span></a>
+        </section>
+
+        <section class="flex h-full w-max shrink-0 bg-paper" id="mansion">
+            <div class="relative flex h-full w-screen shrink-0 overflow-y-auto px-6 sm:px-10 lg:w-[72rem] lg:overflow-visible lg:px-12 xl:w-[84rem]">
+                <img class="pointer-events-none absolute top-8 left-8 hidden h-16 w-64 object-cover lg:block" src="assets/img/5.png" alt="">
+                <img class="pointer-events-none absolute right-16 bottom-8 hidden h-32 w-52 object-contain lg:block" src="assets/img/6.png" alt="">
+                <div class="my-auto flex w-full flex-col py-16 lg:flex-row lg:items-center lg:gap-8 lg:py-8">
+                <img class="hidden h-72 w-64 shrink-0 object-cover lg:block xl:h-80 xl:w-80" src="assets/img/7.jpg" alt="Furniture in the mansion">
+                <div class="w-full shrink-0 lg:w-[22rem] xl:w-[28rem]">
+                    <span class="text-sm font-bold tracking-wide text-teal-700 uppercase">the mansion</span>
+                    <h2 class="mt-3 font-display text-4xl leading-none font-normal uppercase sm:text-5xl xl:text-6xl">Timeless <br>Susquehanna</h2>
+                    <p class="mt-4 text-sm leading-relaxed text-neutral-500 sm:text-base">Wright’s Ferry Mansion has been restored by the Louise Steinman von Hess Foundation with great care to accurately represent the period of 1700-1750, when its builder, Susanna Wright — known as “the blue stocking of the Susquehanna”, engaged in intellectual discourse with some of the most inventive and influential minds of 18th century Philadelphia and beyond.</p>
+                    <a class="group mt-6 inline-flex items-center gap-3 font-medium text-black" href="#mansion">About the mansion<span class="inline-flex size-10 items-center justify-center rounded-full border border-black transition-colors group-hover:bg-black group-hover:text-white"><span class="icon-right"></span></span></a>
                 </div>
-                <figure>
-                    <img src="assets/img/8.jpg" alt="">
-                </figure>
-               </section>
-               <figure class="par">
-                <img src="assets/img/9.jpg" alt="">
-               </figure>
-               <section class="two">
-                <div>
-                    <span>Preview the collection of</span>
-                    <h2>the Louise Steinman Von Hess Foundation</h2>
-                    <p>The well-researched collection, of rare fine and decorative arts representing American Colonial life for the period of 1700 to 1750 is recognized as one of the most authentic and complete in the Nation.</p>
-                    <a href="">Preview collection<span class="icon-right"></span></a>
+                <img class="mt-5 h-28 w-full shrink-0 object-cover sm:h-44 lg:mt-0 lg:h-[26rem] lg:w-[24rem] xl:h-[28rem] xl:w-[30rem]" src="assets/img/8.jpg" alt="Room inside Wright’s Ferry Mansion">
                 </div>
-                <nav>
-                    <ul>
-                        <li>01<span class="icon-right"></span><a href="">all items</a></li>
-                        <li>02<span class="icon-right"></span><a href="">fine art</a></li>
-                        <li>03<span class="icon-right"></span><a href="">cabinet work</a></li>
-                        <li>04<span class="icon-right"></span><a href="">seating</a></li>
-                        <li>05<span class="icon-right"></span><a href="">ceramics</a></li>
-                        <li>06<span class="icon-right"></span><a href="">glass</a></li>
-                        <li>07<span class="icon-right"></span><a href="">metalwork</a></li>
-                        <li>08<span class="icon-right"></span><a href="">textiles</a></li>
-                        <li>09<span class="icon-right"></span><a href="">published works</a></li>
-                        <li>10<span class="icon-right"></span><a href="">ephemera</a></li>
-                    </ul>
-                </nav>
-               </section>
-            </section>
-            <section id="three">
-                <section class="bg1">
-                    <div>
-                        <span>Mansion history</span>
-                        <h3>300 Years of <br>History</h3>
-                        <p>Largely unaltered from its original construction, Wright’s Ferry Mansion was acquired in 1973 by Richard C. and Louise Steinman von Hess, both of whom demonstrated life-long commitments to historic preservation and art connoisseurship. Together, they began a long and most thoughtful restoration of this unique example of Pennsylvania Colonial architecture.</p>
-                        <a href="">Mansion history<span class="icon-right"></span></a>
-                    </div>
-                   
-                </section>
-                <div class="bg2">
-                    <img src="assets/img/2.jpg" alt="">
-                    <span></span>
-                    <figure>
-                        <img src="assets/img/10.jpg" alt="">
-                    </figure>
-                </div>
-                <figure id="bg3">
-                    <img src="assets/img/11.jpg" alt="">
-                </figure>
-                <section class="sec1">
-                    <div>
-                        <img src="assets/img/12.jpg" alt="">
-                        <img src="assets/img/13.jpg" alt="">
-                    </div>
-                    <article>
-                        <span>Virtual Tour</span>
-                        <h3>Explore the <br>Mansion</h3>
-                        <p>Explore Wright’s Ferry Mansion while online with our interactive virtual tour experience. Guided by the late Joseph Keller Kindig, III, an internationally recognized authority on American decorative arts and design, as well as both an advisor to the von Hesses regarding the furnishing of Wright’s Ferry Mansion and a one-time board member of the Louise Steinman von Hess Foundation. Our virtual tours of individual rooms provide comprehensive and immersive looks at the daily life of 18th-century Susanna Wright.</p>
-                        <a href="">Export the mansion<span class="icon-right"></span></a>
-                    </article>
-                    <figure>
-                        <img src="assets/img/14.jpg" alt="">
-                    </figure>
-                </section>
-                <div class="vid">
-                    <video src="assets/img/01.mp4" muted autoplay loop></video>
-                </div>
-            </section>
-            <section id="four">
-                <figure>
-                    <img src="assets/img/15.jpg" alt="">
-                    <figcaption>Schedule your visit
-                        <span>Want to visit WRIGHT’S FERRY mansion?</span>
-                    </figcaption>
-                    <a href="">Here's how<span class="icon-right"></span></a>
-                </figure>
-                <ul>
-                    <li>Address<a href="">38 S 2nd St<br>P.O. Box 68<br>Columbia, PA 17512</a></li>
-                    <li>Phone<a href="">+1 (717) 684-4325</a></li>
-                    <li>Tours<a href="">Schedule a Tour</a></li>
+            </div>
+            <figure class="h-full w-screen shrink-0 lg:w-[24rem]">
+                <img class="h-full w-full object-cover" src="assets/img/9.jpg" alt="Portrait from the mansion collection" loading="lazy">
+            </figure>
+        </section>
+
+        <section class="flex h-full w-max shrink-0 bg-paper" id="collection">
+            <div class="flex h-full w-screen shrink-0 flex-col justify-center px-6 py-24 sm:px-12 lg:w-[44vw] lg:px-16">
+                <span class="text-sm font-bold tracking-wide text-brick uppercase">Preview the collection of</span>
+                <h2 class="mt-3 max-w-xl font-display text-4xl leading-none font-normal text-balance uppercase sm:text-5xl xl:text-6xl">the Louise Steinman Von Hess Foundation</h2>
+                <p class="mt-4 max-w-md text-sm leading-relaxed text-neutral-500 sm:text-base">The well-researched collection, of rare fine and decorative arts representing American Colonial life for the period of 1700 to 1750 is recognized as one of the most authentic and complete in the Nation.</p>
+                <a class="group mt-6 inline-flex items-center gap-3 font-medium text-black" href="#collection">Preview collection<span class="inline-flex size-10 items-center justify-center rounded-full border border-black transition-colors group-hover:bg-black group-hover:text-white"><span class="icon-right"></span></span></a>
+            </div>
+            <nav class="h-full w-screen shrink-0 overflow-y-auto px-6 py-20 sm:px-10 lg:w-[56vw]" aria-label="Collection">
+                <ul class="flex min-h-full flex-col justify-center">
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">01</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">all items</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">02</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">fine art</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">03</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">cabinet work</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">04</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">seating</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">05</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">ceramics</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">06</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">glass</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">07</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">metalwork</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">08</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">textiles</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">09</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">published works</a></li>
+                    <li class="group flex items-center border-b border-neutral-300"><span class="w-10 text-sm text-neutral-500">10</span><span class="icon-right text-2xl text-brick opacity-0 transition-opacity group-hover:opacity-100 max-lg:opacity-100"></span><a class="font-display text-[clamp(1.7rem,4vw,3.1rem)] leading-none font-light text-neutral-700 uppercase transition-colors group-hover:text-brick" href="#collection">ephemera</a></li>
                 </ul>
-                <footer>
-                    <h2>2025 | coded by: Helia Rezaie</h2>
-                    <nav>
-                        <a  href="http://milto:h.rezaie2479@gmail.com" target="_blank"><span class="icon-mail"></span></a>
-                        <a  href="http://linkdin.com/in/helia-rezaie-web" target="_blank"><span class="icon-linkedin"></span></a>
-                        <a href="http://www.instagram.com/helia.web" target="_blank"><span class="icon-instagram"></span></a>
-                        <a href="https://github.com/Helia-rz79" target="_blank"><span class="icon-github-circled-alt2"></span></a>
+            </nav>
+        </section>
+
+        <section class="flex h-full w-max shrink-0" id="history">
+            <div class="flex h-full w-screen shrink-0 overflow-y-auto bg-rust px-6 text-white sm:px-12 lg:w-[40rem] lg:px-16 xl:w-[52rem]">
+                <div class="my-auto py-16">
+                <span class="text-sm font-bold tracking-wide uppercase">Mansion history</span>
+                <h3 class="mt-3 font-display text-4xl leading-none font-normal uppercase sm:text-6xl xl:text-7xl">300 Years of <br>History</h3>
+                <p class="mt-4 max-w-md text-sm leading-relaxed text-neutral-200 sm:text-base">Largely unaltered from its original construction, Wright’s Ferry Mansion was acquired in 1973 by Richard C. and Louise Steinman von Hess, both of whom demonstrated life-long commitments to historic preservation and art connoisseurship. Together, they began a long and most thoughtful restoration of this unique example of Pennsylvania Colonial architecture.</p>
+                <a class="group mt-6 inline-flex items-center gap-3 font-medium text-white" href="#history">Mansion history<span class="inline-flex size-10 items-center justify-center rounded-full border border-white transition-colors group-hover:bg-white group-hover:text-black"><span class="icon-right"></span></span></a>
+                </div>
+            </div>
+            <div class="relative h-full w-screen shrink-0 lg:w-[32rem]">
+                <img class="h-1/2 w-full object-cover" src="assets/img/2.jpg" alt="" loading="lazy">
+                <div class="h-1/2 bg-wine"></div>
+                <img class="absolute top-1/2 left-1/2 z-10 h-[48%] w-[78%] -translate-x-1/2 -translate-y-1/2 object-cover shadow-2xl lg:left-0 lg:w-[88%] lg:-translate-x-20" src="assets/img/10.jpg" alt="Restored room at the mansion" loading="lazy">
+            </div>
+            <figure class="h-full w-screen shrink-0 lg:w-[30rem] xl:w-[40rem]">
+                <img class="h-full w-full object-cover" src="assets/img/11.jpg" alt="Stair hall and tall-case clock" loading="lazy">
+            </figure>
+        </section>
+
+        <section class="flex h-full w-max shrink-0 items-center bg-paper" id="tour">
+            <div class="relative hidden h-full w-72 shrink-0 lg:block">
+                <img class="absolute top-24 left-6 h-52 w-60 object-cover" src="assets/img/12.jpg" alt="" loading="lazy">
+                <img class="absolute right-0 bottom-20 h-44 w-32 object-cover" src="assets/img/13.jpg" alt="" loading="lazy">
+            </div>
+            <article class="flex h-full w-screen shrink-0 overflow-y-auto px-6 sm:px-12 lg:w-[38rem]">
+                <div class="my-auto w-full py-16">
+                <img class="mb-2 h-20 w-full object-cover sm:mb-4 sm:h-36 lg:hidden" src="assets/img/12.jpg" alt="Room on the virtual tour" loading="lazy">
+                <span class="text-sm font-bold tracking-wide text-rust uppercase">Virtual Tour</span>
+                <h3 class="mt-3 font-display text-4xl leading-none font-normal uppercase sm:text-6xl">Explore the <br>Mansion</h3>
+                <p class="mt-4 text-sm leading-relaxed text-neutral-500 sm:text-base">Explore Wright’s Ferry Mansion while online with our interactive virtual tour experience. Guided by the late Joseph Keller Kindig, III, an internationally recognized authority on American decorative arts and design, as well as both an advisor to the von Hesses regarding the furnishing of Wright’s Ferry Mansion and a one-time board member of the Louise Steinman von Hess Foundation. Our virtual tours of individual rooms provide comprehensive and immersive looks at the daily life of 18th-century Susanna Wright.</p>
+                <a class="group mt-6 inline-flex items-center gap-3 font-medium text-black" href="#tour">Explore the mansion<span class="inline-flex size-10 items-center justify-center rounded-full border border-black transition-colors group-hover:bg-black group-hover:text-white"><span class="icon-right"></span></span></a>
+                </div>
+            </article>
+            <img class="mr-10 hidden h-36 w-48 shrink-0 object-cover lg:block" src="assets/img/14.jpg" alt="Detail from the virtual tour" loading="lazy">
+        </section>
+
+        <section class="h-full w-screen shrink-0 bg-black" aria-label="Mansion film">
+            <video class="h-full w-full object-cover" src="assets/img/01.mp4" poster="assets/img/video_01-poster-00001.jpg" muted autoplay loop playsinline></video>
+        </section>
+
+        <section class="flex h-full w-max shrink-0 bg-paper" id="visit">
+            <figure class="relative h-full w-screen shrink-0 lg:w-[40rem] xl:w-[46rem]">
+                <img class="h-full w-full object-cover" src="assets/img/15.jpg" alt="Wright’s Ferry Mansion" loading="lazy">
+                <div class="absolute inset-0 bg-linear-to-t from-black/75 via-black/25 to-transparent"></div>
+                <figcaption class="absolute inset-x-6 bottom-28 text-white sm:inset-x-10">
+                    <p class="text-sm">Schedule your visit</p>
+                    <p class="mt-2 font-display text-[clamp(1.8rem,4vw,3rem)] leading-none font-normal uppercase">Want to visit Wright’s Ferry Mansion?</p>
+                </figcaption>
+                <a class="group absolute bottom-10 left-6 inline-flex items-center gap-3 font-medium text-white sm:left-10" href="#contact">Here's how<span class="inline-flex size-9 items-center justify-center rounded-full border border-white transition-colors group-hover:bg-white group-hover:text-black"><span class="icon-right"></span></span></a>
+            </figure>
+            <div class="flex h-full w-screen shrink-0 overflow-y-auto px-6 sm:px-12 lg:w-[38rem]" id="contact">
+                <div class="my-auto w-full py-16">
+                <ul>
+                    <li class="border-b border-neutral-300 py-4">
+                        <p class="text-xs font-semibold tracking-wide uppercase">Address</p>
+                        <a class="mt-1 block font-display text-3xl leading-tight font-normal text-neutral-800 uppercase transition-colors hover:text-rust sm:text-4xl" href="https://maps.google.com/?q=38+S+2nd+St+Columbia+PA+17512" target="_blank" rel="noreferrer">38 S 2nd St<br>P.O. Box 68<br>Columbia, PA 17512</a>
+                    </li>
+                    <li class="border-b border-neutral-300 py-4">
+                        <p class="text-xs font-semibold tracking-wide uppercase">Phone</p>
+                        <a class="mt-1 block font-display text-3xl leading-tight font-normal text-neutral-800 uppercase transition-colors hover:text-rust sm:text-4xl" href="tel:+17176844325">+1 (717) 684-4325</a>
+                    </li>
+                    <li class="border-b border-neutral-300 py-4">
+                        <p class="text-xs font-semibold tracking-wide uppercase">Tours</p>
+                        <a class="mt-1 block font-display text-3xl leading-tight font-normal text-neutral-800 uppercase transition-colors hover:text-rust sm:text-4xl" href="#visit">Schedule a Tour</a>
+                    </li>
+                </ul>
+                <footer class="mt-8 flex flex-wrap items-center justify-between gap-4">
+                    <h2 class="text-lg font-medium">2025 | coded by: Helia Rezaie</h2>
+                    <nav class="flex" aria-label="Social">
+                        <a class="inline-flex size-11 items-center justify-center text-xl text-neutral-800 transition-colors hover:text-rust" href="mailto:h.rezaie2479@gmail.com"><span class="icon-mail"></span><span class="sr-only">Email</span></a>
+                        <a class="inline-flex size-11 items-center justify-center text-xl text-neutral-800 transition-colors hover:text-rust" href="https://www.linkedin.com/in/helia-rezaie-web" target="_blank" rel="noreferrer"><span class="icon-linkedin"></span><span class="sr-only">LinkedIn</span></a>
+                        <a class="inline-flex size-11 items-center justify-center text-xl text-neutral-800 transition-colors hover:text-rust" href="https://www.instagram.com/helia.web" target="_blank" rel="noreferrer"><span class="icon-instagram"></span><span class="sr-only">Instagram</span></a>
+                        <a class="inline-flex size-11 items-center justify-center text-xl text-neutral-800 transition-colors hover:text-rust" href="https://github.com/Helia-rz79" target="_blank" rel="noreferrer"><span class="icon-github-circled-alt2"></span><span class="sr-only">GitHub</span></a>
                     </nav>
                 </footer>
-            </section>
-            
+                </div>
+            </div>
         </section>
     </main>
+
+    <script>
+        const track = document.querySelector('#track')
+        const menu = document.querySelector('#menu')
+        const toggle = document.querySelector('#menu-toggle')
+        let max = 0
+        let frame = 0
+
+        function positionInTrack(el) {
+            const delta = el.getBoundingClientRect().left - track.getBoundingClientRect().left
+            return Math.max(0, Math.min(max, Math.round(delta)))
+        }
+
+        function paint() {
+            const y = Math.max(0, Math.min(window.scrollY, max))
+            track.style.transform = `translate3d(${-y}px,0,0)`
+        }
+
+        function measure() {
+            const basis = max || 1
+            const ratio = Math.min(1, window.scrollY / basis)
+            max = Math.max(0, track.scrollWidth - window.innerWidth)
+            document.documentElement.style.height = `${max + window.innerHeight}px`
+            const next = Math.round(ratio * max)
+            if (Math.abs(window.scrollY - next) > 1) window.scrollTo(0, next)
+            paint()
+        }
+
+        function setMenu(open) {
+            toggle.setAttribute('aria-expanded', String(open))
+            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu')
+            menu.classList.toggle('translate-x-full', !open)
+            menu.toggleAttribute('inert', !open)
+            menu.setAttribute('aria-hidden', String(!open))
+            document.documentElement.classList.toggle('overflow-hidden', open)
+        }
+
+        document.documentElement.classList.add('js-hscroll')
+        measure()
+
+        window.addEventListener('scroll', () => {
+            if (frame) return
+            frame = requestAnimationFrame(() => {
+                paint()
+                frame = 0
+            })
+        }, { passive: true })
+
+        window.addEventListener('resize', measure)
+        window.addEventListener('load', measure)
+        document.fonts?.ready.then(measure)
+
+        toggle.addEventListener('click', () => {
+            setMenu(toggle.getAttribute('aria-expanded') !== 'true')
+        })
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMenu(false)
+        })
+
+        document.addEventListener('click', (event) => {
+            const link = event.target.closest('a[href^="#"]')
+            if (!link) return
+            const target = document.querySelector(link.getAttribute('href'))
+            if (!target) return
+            event.preventDefault()
+            setMenu(false)
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            window.scrollTo({ top: positionInTrack(target), behavior: reduce ? 'auto' : 'smooth' })
+        })
+    </script>
 </body>
-<script>
-    const main = document.querySelector('body>main')
-    const img1 = document.querySelector('#img1>img')
-    const img2 = document.querySelector('#bg3>img')
-    const menu = document.querySelector('#menu')
-    let flag = 1
-
-    function myMenu(){
-        if(flag % 2){
-            menu.style.right='0'
-        }else{
-            menu.style.right='-100%'
-        }
-        flag++
-    }
-
-    window.addEventListener('scroll', () => {
-        let st = parseInt(window.scrollY)
-        console.log(st);
-
-        main.style.transform = `translateX(-${st}px)`
-        
-        if(st<150){
-            img1.style.transform=`scale(1.${st/20})`
-        }
-        if(st>6500 && st<7200){
-            img1.style.transform=`scale(1.${st/200})`
-        }
-
-    })
-</script>
 
 </html>

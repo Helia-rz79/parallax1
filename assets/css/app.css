@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Archivo", sans-serif;
+    --font-display: "Philosopher", serif;
+    --color-forest: #3e503a;
+    --color-sabz: #dcf263;
+    --color-rust: #aa4935;
+    --color-brick: #b4311a;
+    --color-wine: #6d2112;
+    --color-paper: #f1f1f1;
+    --color-sage: #6a7870;
+}
+
+body {
+    overflow-x: auto;
+}
+
+html.js-hscroll,
+html.js-hscroll body {
+    overflow-x: clip;
+}
+
+html.js-hscroll #track {
+    position: fixed;
+    inset: 0 auto 0 0;
+    height: auto;
+    overflow: hidden;
+    will-change: transform;
+}
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+    margin: 0;
+}

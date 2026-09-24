@@ -8,7 +8,7 @@
 
 -🗓️ Created - 2024-09-20
 
--📱 Technologies Used - Html , css , javascript .
+-📱 Technologies Used - Html, Tailwind CSS, javascript.
 
 - Role - Frontend
 

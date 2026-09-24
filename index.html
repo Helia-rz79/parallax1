@@ -41,7 +41,7 @@
 
     <div id="scroll-space">
     <div class="sticky top-0 h-dvh touch-pan-y overflow-hidden" id="pin">
-    <main class="flex h-full w-max will-change-transform" id="track">
+    <main class="flex h-full w-max" id="track">
         <section class="flex h-full w-max shrink-0" id="intro">
             <div class="flex h-full w-screen shrink-0 flex-col justify-center bg-forest px-6 py-24 text-white sm:px-12 lg:w-[34rem] xl:w-[42rem] xl:px-20">
                 <h1 class="font-display text-[clamp(2.7rem,8vw,5rem)] leading-[0.95] font-normal text-sabz">Discover 18th <br>Century rural <br>life in penn.</h1>
@@ -201,7 +201,8 @@
 
         function paint() {
             const y = Math.max(0, Math.min(window.scrollY, max))
-            track.style.transform = `translate3d(${-y}px,0,0)`
+            track.style.transform = 'none'
+            track.style.marginLeft = `-${y}px`
         }
 
         function measure() {

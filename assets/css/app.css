@@ -12,6 +12,11 @@
     --color-sage: #6a7870;
 }
 
+body {
+    background-color: #f1f1f1;
+    color: #2a2a2a;
+}
+
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
     margin: 0;

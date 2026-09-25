@@ -10,11 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fontello/css/fontello.css">
-    <link rel="stylesheet" href="assets/css/master.css">
+    <link rel="stylesheet" href="assets/css/master.css?v=4">
 </head>
 
 <body class="bg-paper font-sans text-neutral-800 antialiased">
-    <header class="fixed inset-x-0 top-0 z-50 flex h-16 items-center bg-paper/90 px-4 backdrop-blur-md sm:px-8">
+    <header class="fixed inset-x-0 top-0 z-50 flex h-16 items-center px-4 sm:px-8">
         <a class="relative z-50 text-sm font-medium leading-tight max-md:absolute max-md:left-1/2 max-md:w-24 max-md:-translate-x-1/2 md:max-w-44" href="#intro">
             <span class="hidden md:inline">Wright’s Ferry Mansion</span>
             <img class="h-12 w-24 object-contain md:hidden" src="assets/img/6579c06091f576361dee40d0_Group 582.svg" alt="Wright’s Ferry Mansion">
@@ -39,8 +39,7 @@
         </ul>
     </header>
 
-    <div id="scroll-space">
-    <div class="sticky top-0 h-dvh touch-pan-y overflow-hidden" id="pin">
+    <div id="pin">
     <main class="flex h-full w-max" id="track">
         <section class="flex h-full w-max shrink-0" id="intro">
             <div class="flex h-full w-screen shrink-0 flex-col justify-center bg-forest px-6 py-24 text-white sm:px-12 lg:w-[34rem] xl:w-[42rem] xl:px-20">
@@ -184,7 +183,7 @@
         </section>
     </main>
     </div>
-    </div>
+    <div id="scroll-space" aria-hidden="true"></div>
 
     <script>
         const track = document.querySelector('#track')

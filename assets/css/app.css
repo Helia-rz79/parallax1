@@ -17,6 +17,28 @@ body {
     color: #2a2a2a;
 }
 
+header {
+    background-color: rgb(241 241 241 / 55%);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+#pin {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#track {
+    height: 100%;
+}
+
+#scroll-space {
+    width: 1px;
+    pointer-events: none;
+}
+
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
     margin: 0;
